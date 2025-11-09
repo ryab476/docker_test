@@ -8,10 +8,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 4. Копируем весь остальной код приложения
 COPY . .
 # Создаем пользователя appuser
-RUN groupadd --system appgroup && \
-    useradd --system --gid appgroup --shell /bin/false --home-dir /app appuser
+#RUN groupadd --system appgroup && \
+#    useradd --system --gid appgroup --shell /bin/false --home-dir /app appuser
 # Переключаемся на этого пользователя
-USER appuser
+#USER appuser
 # Указываем команду для запуска (она выполнится от имени appuser)
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+
 
