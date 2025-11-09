@@ -1,0 +1,21 @@
+docker build -t my-python-app .
+
+docker images
+
+docker run -d -p 8080:5000 --name my-running-app my-python-app
+
+docker ps
+docker ps -a
+
+docker logs my-running-app
+docker logs -f my-running-app
+
+docker stop my-running-app
+
+docker start my-running-app
+
+# Сначала останавливаем, если он еще работает
+docker stop my-running-app
+
+# Затем удаляем
+docker rm my-running-app
